@@ -8,8 +8,8 @@ def search(list, n):
         if list[i] == n:
             globals()['pos'] = i
             return True
-            i = i+1
-        return False
+        i = i+1
+    return False
 
 list = [5, 10, 20 , 2, 9]
 n = 9
