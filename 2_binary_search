@@ -1,0 +1,30 @@
+pos = -1
+
+def search(list, n):
+
+    lower_bound = 0
+    upper_bound = len(list) - 1
+
+    while lower_bound <= upper_bound:
+        mid_index = (lower_bound + upper_bound)//2
+
+        if list[mid_index] == n:
+            globals()['pos'] = mid_index
+            return True
+        else:
+            if list[mid_index] < n:
+                lower_bound = mid_index + 1
+            else:
+                upper_bound = mid_index - 1
+
+    return False
+
+
+list = [5, 2, 7, 9, 10, 20, 100, 15, 175, 1000]
+n = 175
+
+
+if search(list, n):
+    print("Found number {0} at position {1} in the list ".format(n, pos+1))
+else:
+    print("Number not found in the given list")
